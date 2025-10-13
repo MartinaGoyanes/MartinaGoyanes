@@ -1,6 +1,7 @@
 
 import {View,Text, Pressable} from "react-native";
 import React, { Component } from "react";
+import Contador from "../../components/Contador"
 
 class Card extends Component{
 
@@ -16,9 +17,10 @@ class Card extends Component{
             <Text> Hola Mundo </Text>
             <Pressable onPress={() => this.saludar()}>
                 <Text>Clickeame!</Text>
-
             </Pressable>
+            <Contador/>
         </View>
+        
     );
     }
 }
