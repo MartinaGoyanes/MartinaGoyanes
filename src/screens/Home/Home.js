@@ -1,9 +1,10 @@
 
-import {View,Text, Pressable} from "react-native";
+import {View,Text, Pressable, StyleSheet} from "react-native";
 import React, { Component } from "react";
-import Contador from "../../components/Contador"
+import Contador from "../../components/Contador";
 
-class Card extends Component{
+
+class Home extends Component{
 
     saludar(){
         console.log("me clickearon");
@@ -13,10 +14,10 @@ class Card extends Component{
     render(){
 
     return(
-        <View>
+        <View style={styles.container}>
             <Text> Hola Mundo </Text>
-            <Pressable onPress={() => this.saludar()}>
-                <Text>Clickeame!</Text>
+            <Pressable style={styles.boton} onPress={() => this.saludar()}>
+                <Text style={styles.textoBoton}>Clickeame!</Text>
             </Pressable>
             <Contador/>
         </View>
@@ -25,4 +26,22 @@ class Card extends Component{
     }
 }
 
-export default Card;
+const styles = StyleSheet.create({
+    container: {
+     
+        alignItems: "center",
+        textAlign: "center",
+        padding: 10,
+    },
+    boton:{
+        padding: 4,
+        backgroundColor: "#ccc",
+        marginBottom: 10,
+        borderRadius: 4,
+    },
+    textoBoton:{
+        fontWeight: "bold",
+    }
+})
+
+export default Home;

@@ -1,4 +1,4 @@
-import {View,Text, Pressable} from "react-native";
+import {View,Text, Pressable, StyleSheet} from "react-native";
 import React, { Component } from "react";
 
 class Contador extends Component{
@@ -18,15 +18,31 @@ aumentarContador(){
 
 render(){
     return(
-        <View>
+        <View style={styles.container}>
         <Text> Cantidad de clicks: {this.state.contador}</Text>
-        <Pressable onPress={() => this.aumentarContador()}>
-            <Text>Clickeame!</Text>
+        <Pressable style={styles.boton} onPress={() => this.aumentarContador()}>
+            <Text style={styles.textoBoton}>Clickeame!</Text>
         </Pressable>
         </View>
     )
 }
 
 }
+
+const styles = StyleSheet.create({
+    container:{
+        marginVertical: 5,
+        alignItems: "center",
+    },
+    boton:{
+        padding: 7,
+    backgroundColor: "rgba(0, 255, 0, 0.5)",
+    marginBottom: 10,
+    borderRadius: 4,
+    },
+    textoBoton:{
+        fontWeight: "bold",
+    }
+})
 
 export default Contador; 
